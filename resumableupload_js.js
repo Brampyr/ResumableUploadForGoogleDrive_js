@@ -162,10 +162,9 @@
       return new Promise((resolve, reject) => {
         const resource = this.obj.resource;
         const accessToken = resource.accessToken;
-        let metadata = {
-          mimeType: resource.fileType,
-          name: resource.fileName
-        };
+        let metadata = resource.metadata;
+        metadata.mimeType = resource.fileType;
+        metadata.name = resource.fileName;
         if ("folderId" in resource && resource.folderId != "") {
           metadata.parents = [resource.folderId];
         }
