@@ -163,8 +163,12 @@
         const resource = this.obj.resource;
         const accessToken = resource.accessToken;
         let metadata = resource.metadata;
-        metadata.mimeType = resource.fileType;
-        metadata.name = resource.fileName;
+        if (typeOf metadata.mimeType == "undefined") {
+          metadata.mimeType = resource.fileType;
+        }
+        if (typeOf metadata.name == "undefined") {
+          metadata.name = resource.fileName;
+        }
         if ("folderId" in resource && resource.folderId != "") {
           metadata.parents = [resource.folderId];
         }
