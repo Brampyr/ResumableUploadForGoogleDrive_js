@@ -163,7 +163,7 @@
         const resource = this.obj.resource;
         const accessToken = resource.accessToken;
         let metadata = resource.metadata;
-        if (typeOf metadata.mimeType == "undefined") {
+        if (typeof metadata.mimeType == "undefined") {
           metadata.mimeType = resource.fileType;
         }
         if (typeof metadata.name == "undefined") {
