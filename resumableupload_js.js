@@ -166,7 +166,7 @@
         if (typeOf metadata.mimeType == "undefined") {
           metadata.mimeType = resource.fileType;
         }
-        if (typeOf metadata.name == "undefined") {
+        if (typeof metadata.name == "undefined") {
           metadata.name = resource.fileName;
         }
         if ("folderId" in resource && resource.folderId != "") {
