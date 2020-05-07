@@ -170,7 +170,8 @@
           metadata.name = resource.fileName;
         }
         if ("folderId" in resource && resource.folderId != "") {
-          metadata.parents = [resource.folderId];
+          metadata.parents = [];
+          metadata.parents.concat(resource.folderId);
         }
         fetch(this.endpoint, {
           method: "POST",
